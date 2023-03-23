@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="handleclickprev()">prev</button>
+    <button onclick="handleclicknext()">next</button>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script>
+    
+    let wDate = new Date();
+    let dDay = wDate.getDay() > 0 ? wDate.getDay() : 7;
+    let first = wDate.getDate() - dDay + 1;
+    var firstDayWeek = new Date(wDate.setDate(first));
+    var lastDayWeek = new Date(wDate.setDate(firstDayWeek.getDate() + 6));
+
+    function getf(value, push) {
+      let dDay = value.getDay() > 0 ? value.getDay() : 7;
+      let first = value.getDate() - dDay + 1;
+      if (push) {
+        var firstDayWeek = new Date(value.setDate(first + push));
+        var lastDayWeek = new Date(value.setDate(firstDayWeek.getDate() + 6));
+      } else {
+        var firstDayWeek = new Date(value.setDate(first));
+        var lastDayWeek = new Date(value.setDate(firstDayWeek.getDate() + 6));
+      }
+      return {
+        firstDayWeek: firstDayWeek.toLocaleDateString(),
+        lastDayWeek: lastDayWeek.toLocaleDateString(),
+      };
+    }
+
+    function handleclickprev() {
+     
+    }
+
+    function nextweek(today, num) {
+      var nextweek = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate() + num
+      );
+      return nextweek;
+    }
+
+    let num = 0;
+
+    function handleclicknext() {
+      num += 7;
+
+      console.log(getf(new Date(), num));
+    }
+  </script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .poi {
+      width: 100px;
+      height: 100px;
+      background-color: bisque;
+    }
+  </style>
+  <body>
+    <div
+      onpointerup="test3()"
+      onpointermove="test1()"
+      onpointerdown="test()"
+      class="poi">
+      pus
+    </div>
+  </body>
+  <script>
+    function test(e) {
+      console.log("onpointerdown");
+    }
+
+    function test1(e) {
+      console.log("onpointermove");
+    }
+
+    function test3(e) {
+      console.log("onpointerup");
+    }
+  </script>
+</html>

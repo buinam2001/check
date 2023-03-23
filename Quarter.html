@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let index = 3 + 3 + 3 + 3;
+
+    const today = new Date();
+    const quarter = Math.floor(today.getMonth() / 3);
+
+    // console.log(quarter);
+
+    const startFullQuarter = new Date(today.getFullYear(), quarter * 3 + index, 1);
+
+    const endFullQuarter = new Date(
+      startFullQuarter.getFullYear(),
+      startFullQuarter.getMonth() + 3,
+      0
+    );
+
+    console.log(startFullQuarter.toLocaleDateString());
+    console.log(endFullQuarter.toLocaleDateString());
+  </script>
+</html>
