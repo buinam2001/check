@@ -1,24 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="wapper">
-        <div>
-
-
-        </div>
-        <div>
-            <img src="" alt="">
-        </div>
-        <div></div>
-
+      <div></div>
+      <div>
+        <img src="" alt="" />
+      </div>
+      <div></div>
     </div>
+  </body>
 
+  <script>
+    const obj = [
+      {
+        name: "buinam",
+        arr: [
+          {
+            name: "buinam",
+            id: 1,
+          },
+          {
+            name: "buinam",
+            id: 2,
+          },
+        ],
+      },
+      {
+        name: "buinam",
+        arr: [
+          {
+            name: "buinam",
+            id: 1,
+          },
+          {
+            name: "buinam",
+            id: 2,
+          },
+        ],
+      },
+      {
+        name: "buinam",
+        arr: [
+          {
+            name: "buinam",
+            id: 1,
+          },
+          {
+            name: "buinam",
+            id: 1,
+          },
+          {
+            name: "buinam",
+            id: 1,
+          },
+          {
+            name: "buinam",
+            id: 1,
+          },
+          {
+            name: "buinam",
+            id: 2,
+          },
+          {
+            name: "buinam",
+            id: 3,
+          },
+        ],
+      },
+    ];
 
-</body>
+    obj.forEach((value) => {
+      let cachedObject =  {};
+      value.arr.map((item) => (cachedObject[item.id] = item));
+      arr = Object.values(cachedObject);
+      value.demo = arr;
+    });
+
+  
+    function unique(arr) {
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (newArr.indexOf(arr[i]) === -1) {
+          newArr.push(arr[i]);
+        }
+      }
+      return newArr;
+    }
+    console.log(obj);
+
+    // array.reduce((unique, index) => {
+    //   return unique.includes(item) ? unique : [...unique, item];
+    // }, []);
+
+    tagret = [
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 2,
+      },
+    ];
+
+    function dem() {
+      tagret.forEach((data) => {
+        let e = 0;
+
+        obj.forEach((value) => {
+          value.arr.forEach((value) => {
+            if (data.id === value.id) e++;
+          });
+
+          data.total = e;
+        });
+      });
+    }
+
+    obj[0].arr.push(
+      {
+        name: "buinam",
+        id: 2,
+      },
+      {
+        name: "buinam",
+        id: 2,
+      }
+    );
+    dem();
+
+    // console.log(tagret);
+  </script>
 </html>

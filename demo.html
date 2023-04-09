@@ -7,38 +7,148 @@
     <title>Document</title>
   </head>
   <style>
-    .signature_view {
-      width: 131px;
-      border: 2px solid rgb(196, 191, 191);
+    .arrow_box {
+      height: 160px;
+      margin-top: 200px;
+      width: 400px;
+      position: relative;
+      background: #88b7d5;
+      border: 4px solid #c2e1f5;
+    }
+    .arrow_box:after,
+    .arrow_box:before {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
     }
 
-    .signature_view:hover {
-      border-color: rgb(151, 150, 150);
+    .arrow_box:after {
+      border-color: rgba(136, 183, 213, 0);
+      border-left-color: #88b7d5;
+      border-width: 110px;
+      margin-top: -110px;
     }
-    .signature_view img {
-      width: 100%;
-    }
-
-    .signature_view--bottom {
-      background-color: rgb(233, 233, 233);
-    }
-
-    .signature_view--index {
-      font-size: 13px;
-      padding: 8px;
-      color: #1e1e1e;
+    .arrow_box:before {
+      border-color: rgba(194, 225, 245, 0);
+      border-left-color: #c2e1f5;
+      border-width: 116px;
+      margin-top: -116px;
     }
   </style>
-
   <body>
-    <div class="signature_view">
-      <img
-        src="https://www.researchgate.net/profile/Garland-Marshall-2/publication/49833972/figure/fig5/AS:668733781581831@1536449966319/The-AutoDock-docking-parameter-file-dpf-used-for-docking-one-of-the-compounds-in-the.png"
-        alt="" />
-
-      <div class="signature_view--bottom">
-        <div class="signature_view--index">1</div>
-      </div>
-    </div>
+    <div class="arrow_box"></div>
   </body>
+
+  <script>
+    const obj = [
+  {
+    name: "buinam",
+    arr: [
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 2,
+      },
+    ],
+  },
+  {
+    name: "buinam",
+    arr: [
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 2,
+      },
+    ],
+  },
+  {
+    name: "buinam",
+    arr: [
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 1,
+      },
+      {
+        name: "buinam",
+        id: 2,
+      },
+    ],
+  },
+];
+
+const target = [
+  {
+    name: "buinam",
+    id: 2,
+  },
+  {
+    name: "buinam",
+    id: 1,
+  },
+];
+
+let count = 0;
+for (let i = 0; i < obj.length; i++) {
+  const arr = obj[i].arr;
+  // console.log(arr)
+  for (let j = 0; j < arr.length; j++) {
+    const element = arr[j];
+    console.log(element)
+    if (
+      target.every((t) => t.name === element.name && t.id === element.id)
+    ) {
+      count++;
+    }
+  }
+}
+
+
+  </script>
 </html>
